@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    let items = xylphonesData
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+        ForEach(items) {item in
+                Text(item.title)
+                    .foregroundColor(item.color)
+            }
+        }
     }
 }
 

@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B34219E525BFF48800BEBD1E /* XylophoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34219E425BFF48800BEBD1E /* XylophoneApp.swift */; };
-		B34219E725BFF48800BEBD1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34219E625BFF48800BEBD1E /* ContentView.swift */; };
 		B34219E925BFF48E00BEBD1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34219E825BFF48E00BEBD1E /* Assets.xcassets */; };
 		B34219EC25BFF48E00BEBD1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34219EB25BFF48E00BEBD1E /* Preview Assets.xcassets */; };
+		B34219F525BFF66800BEBD1E /* XylphoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34219F425BFF66800BEBD1E /* XylphoneItem.swift */; };
+		B34219F925BFF72100BEBD1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34219F825BFF72100BEBD1E /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B34219E125BFF48800BEBD1E /* Xylophone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xylophone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34219E425BFF48800BEBD1E /* XylophoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XylophoneApp.swift; sourceTree = "<group>"; };
-		B34219E625BFF48800BEBD1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B34219E825BFF48E00BEBD1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B34219EB25BFF48E00BEBD1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B34219ED25BFF48E00BEBD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B34219F425BFF66800BEBD1E /* XylphoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XylphoneItem.swift; sourceTree = "<group>"; };
+		B34219F825BFF72100BEBD1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Xylophone/ContentView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				B34219E425BFF48800BEBD1E /* XylophoneApp.swift */,
-				B34219E625BFF48800BEBD1E /* ContentView.swift */,
+				B34219F825BFF72100BEBD1E /* ContentView.swift */,
+				B34219F425BFF66800BEBD1E /* XylphoneItem.swift */,
 				B34219E825BFF48E00BEBD1E /* Assets.xcassets */,
 				B34219ED25BFF48E00BEBD1E /* Info.plist */,
 				B34219EA25BFF48E00BEBD1E /* Preview Content */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B34219E725BFF48800BEBD1E /* ContentView.swift in Sources */,
+				B34219F525BFF66800BEBD1E /* XylphoneItem.swift in Sources */,
 				B34219E525BFF48800BEBD1E /* XylophoneApp.swift in Sources */,
+				B34219F925BFF72100BEBD1E /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
