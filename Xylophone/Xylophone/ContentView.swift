@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    let items = xylphonesData
+    let items = xylphonesItems
     
     var body: some View {
         VStack(spacing: 0) {
             ForEach(items) {item in
-                Text(item.title)
-                        .foregroundColor(item.color)
-                
+                Button(action: {
+                    print(item.title)
+                }) {
+                    item.color
+                        .edgesIgnoringSafeArea(.all)
                 }
+            }
         }
     }
 }

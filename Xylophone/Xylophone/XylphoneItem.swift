@@ -13,7 +13,7 @@ struct XylophoneItem: Identifiable {
     var color: Color
 }
 
-let xylphonesData = [
+let xylphonesItems = [
     XylophoneItem(title: "A", color: Color(red: 237/255, green: 112/255, blue: 107/255)),
     XylophoneItem(title: "B", color: Color(red: 245/255, green: 192/255, blue: 103/255)),
     XylophoneItem(title: "C", color: Color(red: 255/255, green: 255/255, blue: 127/255)),
