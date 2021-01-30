@@ -21,13 +21,12 @@ struct ContentView: View {
             ZStack {
                 if fullScreen {
                     FullScreenViewAnimation()
-//                    fullScreenView
+                        .transition(.moveAndFade)
                 } else {
-//                    separateButtonsView
                     NotFullScreenViewAnimation()
+                        .transition(.moveAndFade)
                 }
             }
-            .transition(.move(edge: .bottom))
             .animation(.spring())
             
             
@@ -52,80 +51,111 @@ struct ContentView: View {
         
     }
     
-    private var fullScreenView: some View {
+//    private var fullScreenView: some View {
+//        VStack(spacing: 10) {
+//            ForEach(items.indices) { item in
+//                GeometryReader { geo in
+//                    Button(action: {
+//                        playSound(sound: items[item].title)
+//                    }) {
+//                        items[item].color
+//                            .cornerRadius(14)
+//                            .frame(width: geo.size.width - CGFloat(item + 1) * 10, height: geo.size.height)
+//                            .position(x: geo.size.width / 2, y: geo.size.height / 2)
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+//    private var separateButtonsView: some View {
+//        VStack(spacing: 0) {
+//            ForEach(items.indices) { item in
+//                    Button(action: {
+//                        playSound(sound: items[item].title, player: player)
+//                    }) {
+//                        items[item].color
+//                }
+//            }
+//        }
+//        .edgesIgnoringSafeArea(.all)
+//    }
+}
+
+//func playSound(sound: String, player: AVAudioPlayer) {
+//    let path = Bundle.main.path(forResource: sound, ofType: "wav")!
+//    let url = URL(fileURLWithPath: path)
+//
+//    do {
+//        player = try AVAudioPlayer(contentsOf: url)
+//        player?.play()
+//    } catch {
+//        print("error")
+//    }
+//}
+
+struct FullScreenViewAnimation: View {
+    let items = xylphonesItems
+//    @State private var viewPlayer = AVAudioPlayer?
+    
+    var body: some View {
         VStack(spacing: 10) {
             ForEach(items.indices) { item in
                 GeometryReader { geo in
                     Button(action: {
-                        playSound(sound: items[item].title)
+//                        playSound(sound: items[item].title)
                     }) {
                         items[item].color
                             .cornerRadius(14)
                             .frame(width: geo.size.width - CGFloat(item + 1) * 10, height: geo.size.height)
                             .position(x: geo.size.width / 2, y: geo.size.height / 2)
-//                            .transition(.slide)
-//                            .animation(.ripple(index: item))
+//                            .transition(.move(edge: .trailing))
+                            .animation(.ripple(index: item))
                     }
                 }
             }
         }
     }
+}
+
+struct NotFullScreenViewAnimation: View {
+    let items = xylphonesItems
     
-    private var separateButtonsView: some View {
+    var body: some View {
         VStack(spacing: 0) {
             ForEach(items.indices) { item in
                     Button(action: {
-                        playSound(sound: items[item].title)
+//                        playSound(sound: items[item].title)
                     }) {
                         items[item].color
-//                            .transition(.slide)
-//                            .animation(.ripple(index: item))
+//                            .transition(.move(edge: .trailing))
+                            .animation(.ripple(index: item))
                 }
             }
         }
         .edgesIgnoringSafeArea(.all)
     }
-    
-    func playSound(sound: String) {
-        let path = Bundle.main.path(forResource: sound, ofType: "wav")!
-        let url = URL(fileURLWithPath: path)
-        
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: url)
-            soundPlayer?.play()
-        } catch {
-            print("error")
-        }
-    }
-    
-    
-}
-
-struct FullScreenViewAnimation: View {
-    var body: some View {
-        Rectangle()
-            .fill(Color.green)
-            .frame(width: 100, height: 100)
-    }
-}
-
-struct NotFullScreenViewAnimation: View {
-    var body: some View {
-        Rectangle()
-            .fill(Color.red)
-            .frame(width: 200, height: 500)
-    }
 }
 
 
-//extension Animation {
-//    static func ripple(index: Int) -> Animation {
-//        Animation.spring(dampingFraction: 0.5)
-//            .speed(2)
-//            .delay(0.03 * Double(index))
-//    }
-//
-//}
+extension Animation {
+    static func ripple(index: Int) -> Animation {
+        Animation.spring(dampingFraction: 0.2)
+            .speed(2)
+            .delay(0.03 * Double(index))
+    }
+
+}
+
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        let insertion = AnyTransition.move(edge: .trailing)
+            .combined(with: .opacity)
+        let removal = AnyTransition.scale
+            .combined(with: .opacity)
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
