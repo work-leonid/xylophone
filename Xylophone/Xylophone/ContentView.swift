@@ -11,11 +11,12 @@ struct ContentView: View {
     let items = xylphonesData
     
     var body: some View {
-        VStack {
-        ForEach(items) {item in
+        VStack(spacing: 0) {
+            ForEach(items) {item in
                 Text(item.title)
-                    .foregroundColor(item.color)
-            }
+                        .foregroundColor(item.color)
+                
+                }
         }
     }
 }
