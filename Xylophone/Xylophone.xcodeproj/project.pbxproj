@@ -11,7 +11,7 @@
 		B34219E925BFF48E00BEBD1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34219E825BFF48E00BEBD1E /* Assets.xcassets */; };
 		B34219EC25BFF48E00BEBD1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B34219EB25BFF48E00BEBD1E /* Preview Assets.xcassets */; };
 		B34219F525BFF66800BEBD1E /* XylphoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34219F425BFF66800BEBD1E /* XylphoneItem.swift */; };
-		B34219F925BFF72100BEBD1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34219F825BFF72100BEBD1E /* ContentView.swift */; };
+		B3565DA025C5D73000F2690E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3565D9F25C5D73000F2690E /* ContentView.swift */; };
 		B3F2AD6E25C551D60080ACDE /* A.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3F2AD6725C551D60080ACDE /* A.wav */; };
 		B3F2AD6F25C551D60080ACDE /* C.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3F2AD6825C551D60080ACDE /* C.wav */; };
 		B3F2AD7025C551D60080ACDE /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3F2AD6925C551D60080ACDE /* B.wav */; };
@@ -28,7 +28,7 @@
 		B34219EB25BFF48E00BEBD1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B34219ED25BFF48E00BEBD1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34219F425BFF66800BEBD1E /* XylphoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XylphoneItem.swift; sourceTree = "<group>"; };
-		B34219F825BFF72100BEBD1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Xylophone/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		B3565D9F25C5D73000F2690E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3F2AD6725C551D60080ACDE /* A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = A.wav; sourceTree = "<group>"; };
 		B3F2AD6825C551D60080ACDE /* C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = C.wav; sourceTree = "<group>"; };
 		B3F2AD6925C551D60080ACDE /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = B.wav; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				B34219E425BFF48800BEBD1E /* XylophoneApp.swift */,
-				B34219F825BFF72100BEBD1E /* ContentView.swift */,
+				B3565D9F25C5D73000F2690E /* ContentView.swift */,
 				B34219F425BFF66800BEBD1E /* XylphoneItem.swift */,
 				B34219E825BFF48E00BEBD1E /* Assets.xcassets */,
 				B3F2AD6625C551D60080ACDE /* Sounds */,
@@ -179,7 +179,7 @@
 			files = (
 				B34219F525BFF66800BEBD1E /* XylphoneItem.swift in Sources */,
 				B34219E525BFF48800BEBD1E /* XylophoneApp.swift in Sources */,
-				B34219F925BFF72100BEBD1E /* ContentView.swift in Sources */,
+				B3565DA025C5D73000F2690E /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
