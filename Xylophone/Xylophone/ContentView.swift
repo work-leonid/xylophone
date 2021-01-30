@@ -22,20 +22,25 @@ struct ContentView: View {
                     Button(action: {
                         playSound(sound: item.title)
                     }) {
-                        item.color
-                            .edgesIgnoringSafeArea(.all)
+                        Text("d")
+//                        item.color
+//                            .edgesIgnoringSafeArea(.all)
                     }
+                    .buttonStyle(ButtonWithShadowView(bgColor: item.color))
                 }
             }
         } else {
             VStack(spacing: 0) {
                 ForEach(items) {item in
                     Button(action: {
-                        playSound(sound: item.title)
+//                        playSound(sound: item.title)
                     }) {
-                        item.color
-                            .edgesIgnoringSafeArea(.all)
+                        Rectangle()
+                            .fill(Color.clear)
+//                        item.color
+//                            .edgesIgnoringSafeArea(.all)
                     }
+                    .buttonStyle(ButtonWithShadowView(bgColor: item.color))
                 }
             }
         }
