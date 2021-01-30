@@ -12,17 +12,34 @@ struct ContentView: View {
     let items = xylphonesItems
     @State private var soundPlayer: AVAudioPlayer?
     
+    @Environment(\.verticalSizeClass) var sizeClass: UserInterfaceSizeClass?
+
+    
     var body: some View {
-        VStack(spacing: 0) {
-            ForEach(items) {item in
-                Button(action: {
-                    playSound(sound: item.title)
-                }) {
-                    item.color
-                        .edgesIgnoringSafeArea(.all)
+        if sizeClass == .compact {
+            HStack(spacing: 0) {
+                ForEach(items) {item in
+                    Button(action: {
+                        playSound(sound: item.title)
+                    }) {
+                        item.color
+                            .edgesIgnoringSafeArea(.all)
+                    }
+                }
+            }
+        } else {
+            VStack(spacing: 0) {
+                ForEach(items) {item in
+                    Button(action: {
+                        playSound(sound: item.title)
+                    }) {
+                        item.color
+                            .edgesIgnoringSafeArea(.all)
+                    }
                 }
             }
         }
+        
     }
     
     func playSound(sound: String) {
