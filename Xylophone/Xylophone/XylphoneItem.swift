@@ -19,5 +19,6 @@ let xylphonesItems = [
     XylophoneItem(title: "C", color: Color(red: 255/255, green: 255/255, blue: 127/255)),
     XylophoneItem(title: "D", color: Color(red: 172/255, green: 224/255, blue: 102/255)),
     XylophoneItem(title: "E", color: Color(red: 151/255, green: 204/255, blue: 246/255)),
-    XylophoneItem(title: "F", color: Color(red: 193/255, green: 116/255, blue: 146/255))
+    XylophoneItem(title: "F", color: Color(red: 193/255, green: 116/255, blue: 146/255)),
+    XylophoneItem(title: "G", color: Color(red: 167/255, green: 45/255, blue: 167/255))
 ]
