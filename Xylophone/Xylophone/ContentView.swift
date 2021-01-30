@@ -51,52 +51,24 @@ struct ContentView: View {
         
     }
     
-//    private var fullScreenView: some View {
-//        VStack(spacing: 10) {
-//            ForEach(items.indices) { item in
-//                GeometryReader { geo in
-//                    Button(action: {
-//                        playSound(sound: items[item].title)
-//                    }) {
-//                        items[item].color
-//                            .cornerRadius(14)
-//                            .frame(width: geo.size.width - CGFloat(item + 1) * 10, height: geo.size.height)
-//                            .position(x: geo.size.width / 2, y: geo.size.height / 2)
-//                    }
-//                }
-//            }
-//        }
-//    }
+    func playSound(sound: String) {
+        let path = Bundle.main.path(forResource: sound, ofType: "wav")!
+        let url = URL(fileURLWithPath: path)
     
-//    private var separateButtonsView: some View {
-//        VStack(spacing: 0) {
-//            ForEach(items.indices) { item in
-//                    Button(action: {
-//                        playSound(sound: items[item].title, player: player)
-//                    }) {
-//                        items[item].color
-//                }
-//            }
-//        }
-//        .edgesIgnoringSafeArea(.all)
-//    }
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: url)
+            soundPlayer?.play()
+        } catch {
+            print("error")
+        }
+    }
 }
 
-//func playSound(sound: String, player: AVAudioPlayer) {
-//    let path = Bundle.main.path(forResource: sound, ofType: "wav")!
-//    let url = URL(fileURLWithPath: path)
-//
-//    do {
-//        player = try AVAudioPlayer(contentsOf: url)
-//        player?.play()
-//    } catch {
-//        print("error")
-//    }
-//}
+
 
 struct FullScreenViewAnimation: View {
     let items = xylphonesItems
-//    @State private var viewPlayer = AVAudioPlayer?
+//    var action: (() -> Void)?
     
     var body: some View {
         VStack(spacing: 10) {
