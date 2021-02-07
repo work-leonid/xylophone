@@ -16,6 +16,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
+            Color.white
+                .edgesIgnoringSafeArea(.all)
+            
             VStack(spacing: isFullScreen ? 0 : 15) {
                 ForEach(keys.indices) { index in
                     GeometryReader { geo in
@@ -33,6 +36,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .padding(isFullScreen ? 0 : 10)
             .edgesIgnoringSafeArea(isFullScreen ? .all : .horizontal)
             
             Button(action: {
@@ -48,6 +52,7 @@ struct ContentView: View {
                     
             }
         }
+        
     }
     
     func playSound(byName: String) {
@@ -66,5 +71,6 @@ struct ContentView: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+//            .previewDevice(PreviewDevice(rawValue: "iPad Pro (10.5-inch)"))
     }
 }
